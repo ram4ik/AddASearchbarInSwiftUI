@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var searchString = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                ForEach(0..<10) { i in
+                    Text("\(i) index")
+                }
+            }
+            .navigationTitle("Searchbar")
+            // iOS 15
+            //.searchable(text: $searchString)
+        }
     }
 }
 
